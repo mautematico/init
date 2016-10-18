@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+echo "downloading new firefox version"
+firefox_url="$(curl -Ss https://www.mozilla.org/en-US/firefox/nightly/all/  | grep -Eo '(https).*(es-MX.linux-x86_64.tar.bz2)')"
+echo "firefox_url is: $firefox_url"
+wget -qO - "${firefox_url}" | tar -jxvf - -C /opt/

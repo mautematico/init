@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+updates_dir="update.d"
+
+for entry in "$updates_dir"/*
+do
+  echo "now running: $entry"
+  bash "$entry"
+done

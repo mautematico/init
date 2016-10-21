@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+echo "downloading packages lists"
+aptitude update
+
+echo "downloading package updates"
+aptitude upgrade -dy
+aptitude dist-upgrade -dy
+aptitude full-upgrade -dy
+
+echo "performing upgrade"
+aptitude upgrade
+echo "performing dist-upgrade"
+aptitude dist-upgrade
+echo "performing full-upgrade"
+aptitude full-upgrade

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+echo "removing old litecoin-qt version"
+rm -rf /opt/litecoin
+echo "downloading new litecoin-qt version"
+ltc_ver="0.14.2"
+ltc_url="https://download.litecoin.org/litecoin-${ltc_ver}/linux/litecoin-${ltc_ver}-x86_64-linux-gnu.tar.gz"
+echo "ltc url is: $ltc_url"
+wget -qO - "${ltc_url}" | tar -zxvf - -C /opt/
+mv -v "/opt/litecoin-$ltc_ver" /opt/litecoin
